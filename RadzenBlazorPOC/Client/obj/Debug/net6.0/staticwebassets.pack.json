@@ -1,0 +1,121 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\Pages\\ThemePicker.razor.js",
+      "PackagePath": "staticwebassets\\Pages\\ThemePicker.razor.js"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\obj\\Debug\\net6.0\\build-gz\\4YMfT6A6.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RadzenBlazorPOC.Client.styles.css",
+      "PackagePath": "staticwebassets\\RadzenBlazorPOC.Client.styles.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\app.min.css",
+      "PackagePath": "staticwebassets\\css\\app.min.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\theme_one.css",
+      "PackagePath": "staticwebassets\\css\\theme_one.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\theme_one.min.css",
+      "PackagePath": "staticwebassets\\css\\theme_one.min.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\theme_three.css",
+      "PackagePath": "staticwebassets\\css\\theme_three.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\theme_three.min.css",
+      "PackagePath": "staticwebassets\\css\\theme_three.min.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\theme_two.css",
+      "PackagePath": "staticwebassets\\css\\theme_two.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\css\\theme_two.min.css",
+      "PackagePath": "staticwebassets\\css\\theme_two.min.css"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Client\\wwwroot\\js\\swap_theme.js",
+      "PackagePath": "staticwebassets\\js\\swap_theme.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.RadzenBlazorPOC.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.RadzenBlazorPOC.Client.props",
+      "PackagePath": "build\\RadzenBlazorPOC.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.RadzenBlazorPOC.Client.props",
+      "PackagePath": "buildMultiTargeting\\RadzenBlazorPOC.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.RadzenBlazorPOC.Client.props",
+      "PackagePath": "buildTransitive\\RadzenBlazorPOC.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,44 @@
+﻿@page "/pieChart"
+
+
+<h3>PieChart</h3>
+
+<MudGrid>
+    <MudItem xs="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">
+            <ApexChart TItem="Order"
+                       Title="Order Gross Value">
+
+                <ApexPointSeries TItem="Order"
+                                 Items="Orders"
+                                 Name="Gross Value"
+                                 SeriesType="SeriesType.Pie"
+                                 XValue="@(e => e.Country)"
+                                 YAggregate="@(e => e.Sum(e => e.GrossValue))"
+                                 OrderByDescending="e=>e.Y" />
+            </ApexChart>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-8">xs=6</MudPaper>
+    </MudItem>
+</MudGrid>
+
+
+@code {
+    private List<Order> Orders { get; set; } = new List<Order>();
+
+    protected override void OnInitialized()
+    {
+        Orders.Add(new Order {Country = "Argentina", GrossValue = 2.5M});
+        Orders.Add(new Order { Country = "Uruguay", GrossValue = 10M });
+        Orders.Add(new Order { Country = "Chile", GrossValue = 32.5M });
+        Orders.Add(new Order { Country = "Brasil", GrossValue = 102.5M });
+    }
+
+    public class Order
+    {
+        public string Country { get; set; }
+        public decimal GrossValue { get; set; }
+    }
+}

@@ -1,0 +1,10 @@
+@media (max-width: 600px) {
+    ::deep body {
+        background-color: gray !important;
+        color: white !important;
+    }
+
+    ::deep h1 {
+        color: red;
+    }
+}

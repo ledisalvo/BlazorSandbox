@@ -1,0 +1,53 @@
+﻿@page "/appearance"
+
+<PageTitle>Appearance</PageTitle>
+
+<h1>Appearance</h1>
+
+<RadzenSplitter Orientation="Radzen.Orientation.Vertical" style="height: 400px; border: 1px solid rgba(0,0,0,.08);">
+    <RadzenSplitterPane Size="100px">
+        <RadzenSplitter >
+            <RadzenSplitterPane Size="50%" Min="30px" Max="70%">
+                Pane A1
+                <div style="font-size: 10px;">
+                    50% Min 30px Max 70%
+                </div>
+            </RadzenSplitterPane>
+            <RadzenSplitterPane>
+                Pane A2
+            </RadzenSplitterPane>
+        </RadzenSplitter>
+    </RadzenSplitterPane>
+    <RadzenSplitterPane Size="100px">
+        <RadzenSplitter>
+            
+            <RadzenSplitterPane Resizable="false">
+                Pane B3
+                <div style="font-size: 10px;">
+                    not resizable
+                </div>
+            </RadzenSplitterPane>
+            
+            <RadzenSplitterPane>
+                Pane B8
+            </RadzenSplitterPane>
+        </RadzenSplitter>
+    </RadzenSplitterPane>
+    <RadzenSplitterPane>
+        <RadzenSplitter >
+            <RadzenSplitterPane>
+                Pane C1
+                <div style="font-size: 10px;">
+                    collapse and resize programmatically disabled
+                </div>
+            </RadzenSplitterPane>
+            <RadzenSplitterPane>
+                Pane C2
+                <div style="font-size: 10px;">
+                    collapse and resize programmatically disabled
+                </div>
+            </RadzenSplitterPane>
+        </RadzenSplitter>
+    </RadzenSplitterPane>
+</RadzenSplitter>
+

@@ -1,0 +1,65 @@
+﻿@page "/formTest"
+
+<h1>Form Test</h1>
+
+<MudForm>
+
+    <MudTextField Label="Nombre" @bind-Value="_name" />
+
+    <MudTextField Label="Apellido" @bind-Value="_lastName" />
+
+    <MudDatePicker Label="Fecha de nacimiento" @bind-Date="_birthDate" />
+
+    <MudCheckBox Label="¿Eres mayor de edad?" @bind-Checked="@_isOlder"></MudCheckBox>
+
+    <MudRadioGroup Label="Género" @bind-SelectedOption="@_selectedOption">
+        <MudRadio Option="@("Radio 1")" Value="M">Masculino</MudRadio>
+        <MudRadio Option="@("Radio 2")" Value="F">Femenino</MudRadio>
+        <MudRadio Option="@("Radio 3")" Value="O">Otro</MudRadio>
+    </MudRadioGroup>
+
+    <MudSelect T="string" Label="País">
+        <MudSelectItem Value="@("México")" />
+        <MudSelectItem Value="@("Argentina")" />
+        <MudSelectItem Value="@("Chile")" />
+        <MudSelectItem Value="@("Brasil")" />
+    </MudSelect>
+
+    <MudSwitch Label="¿Aceptas los términos y condiciones?" @bind-Checked="_acceptTerms" />
+
+    <MudSlider Label="Edad" Value="_age" Max="100" />
+
+    <MudTextField T="string" Label="Comentarios" Text="@_comments" Lines="5"/>
+
+    <MudFileUpload T="IBrowserFile" FilesChanged="UploadFiles">
+        <ButtonTemplate>
+            <MudButton HtmlTag="label"
+                       Variant="MudBlazor.Variant.Filled"
+                       Color="MudBlazor.Color.Primary"
+                       StartIcon="@Icons.Material.Filled.CloudUpload"
+                       for="@context">
+                Upload Files
+            </MudButton>
+        </ButtonTemplate>
+    </MudFileUpload>
+
+    <MudButton Variant="MudBlazor.Variant.Outlined" Color="MudBlazor.Color.Primary">Aceptar</MudButton>
+
+</MudForm>
+
+@code {
+    public string _name { get; set; } = "";
+    public string _lastName { get; set; } = "";
+    public DateTime? _birthDate = DateTime.Today;
+    public bool _isOlder { get; set; } = false;
+    public string _selectedOption { get; set; }
+    public bool _acceptTerms { get; set; } = false;
+    public double _age { get; set; } = 50.0;
+    public string _comments { get; set; } = "Dummy Comments for test purposes";
+    IList<IBrowserFile> files = new List<IBrowserFile>();
+    private void UploadFiles(IBrowserFile file)
+    {
+        files.Add(file);
+        //TODO upload the files to the server
+    }
+}

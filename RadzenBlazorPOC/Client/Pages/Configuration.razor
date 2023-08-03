@@ -1,0 +1,40 @@
+﻿@page "/configuration"
+@inject HttpClient Http
+@using RadzenBlazorPOC.Shared;
+
+<PageTitle>Configuration page</PageTitle>
+
+<h1>Configurations</h1>
+
+@if (configurations == null)
+{
+    <h3>Loading...</h3>
+}
+else
+{
+    <RadzenDataGrid Data="@configurations" TItem="RadzenBlazorPOC.Shared.Configuration" GridLines="@GridLines" AllowPaging="true" AllowSorting="true">
+        <Columns>
+            <RadzenDataGridColumn TItem="RadzenBlazorPOC.Shared.Configuration" Property="Id" Title="Id" />
+            <RadzenDataGridColumn TItem="RadzenBlazorPOC.Shared.Configuration" Property="IdGroupConfiguration" Title="IdGroupConfiguration" />
+            <RadzenDataGridColumn TItem="RadzenBlazorPOC.Shared.Configuration" Property="Field" Title="Field" />
+            <RadzenDataGridColumn TItem="RadzenBlazorPOC.Shared.Configuration" Property="Name" Title="Name" />
+            <RadzenDataGridColumn TItem="RadzenBlazorPOC.Shared.Configuration" Property="Description" Title="Description" />
+            <RadzenDataGridColumn TItem="RadzenBlazorPOC.Shared.Configuration" Property="IdSelectionType" Title="IdSelectionType" />
+            <RadzenDataGridColumn TItem="RadzenBlazorPOC.Shared.Configuration" Property="Options" Title="Options" />
+        </Columns>
+    </RadzenDataGrid>
+}
+
+
+@code {
+    Radzen.DataGridGridLines GridLines = Radzen.DataGridGridLines.Default;
+
+    private IEnumerable<RadzenBlazorPOC.Shared.Configuration>? configurations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        configurations = await Http.GetFromJsonAsync<RadzenBlazorPOC.Shared.Configuration[]>("/Configuration/GetConfigurations");
+    }
+}
+
+

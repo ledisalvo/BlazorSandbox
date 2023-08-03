@@ -1,0 +1,25 @@
+/* /Pages/Configuration.razor.rz.scp.css */
+body[b-syuyy6bq18] {
+}
+
+h1[b-syuyy6bq18] {
+    border: 1px solid red;
+}
+/* /Pages/Index.razor.rz.scp.css */
+
+/* /Shared/MainLayout.razor.rz.scp.css */
+@media (max-width: 600px) {
+    [b-5eiw5wbvmk] body {
+        background-color: gray !important;
+        color: white !important;
+    }
+
+    [b-5eiw5wbvmk] h1 {
+        color: red;
+    }
+}
+/* /Shared/NavMenu.razor.rz.scp.css */
+li.rz-navigation-item.test[b-ijt52mxspy] {
+    display: flex;
+    justify-content: center;
+}

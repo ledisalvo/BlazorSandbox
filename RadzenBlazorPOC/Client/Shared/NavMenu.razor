@@ -1,0 +1,30 @@
+﻿@inject TooltipService tooltipService
+
+@*<RadzenPanelMenu >
+    <RadzenPanelMenuItem class="test" Path="/" Icon="home" />
+    <RadzenPanelMenuItem Text="Configuration" Path="configuration" Icon="settings" />
+    <RadzenPanelMenuItem Text="TestHugoForm" Path="formTest" Icon="settings" />
+    <RadzenPanelMenuItem Text="Theme Picker" Path="themePicker" Icon="invert_colors" />
+</RadzenPanelMenu>*@
+
+<MudDrawer ClipMode="clipMode" Breakpoint="@breakpoint" PreserveOpenState="@preserveOpenState" Elevation="1" Variant="@DrawerVariant.Mini">
+    <MudNavMenu>
+        <MudNavLink Href="configuration" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Store">Store</MudNavLink>
+        <MudNavLink Href="formTest" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.LibraryBooks">Library</MudNavLink>
+        <MudNavLink Href="themePicker" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Group">Community</MudNavLink>
+        <MudNavLink Href="colorsPalette" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Group">Colors Palette</MudNavLink>
+    </MudNavMenu>
+</MudDrawer>
+
+@code {
+    bool open = false;
+    bool dense = false;
+    bool preserveOpenState = false;
+    Breakpoint breakpoint = Breakpoint.Lg;
+    DrawerClipMode clipMode = DrawerClipMode.Never;
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+}

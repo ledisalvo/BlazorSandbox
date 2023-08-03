@@ -1,0 +1,10 @@
+@media (max-width: 600px) {
+    [b-5eiw5wbvmk] body {
+        background-color: gray !important;
+        color: white !important;
+    }
+
+    [b-5eiw5wbvmk] h1 {
+        color: red;
+    }
+}

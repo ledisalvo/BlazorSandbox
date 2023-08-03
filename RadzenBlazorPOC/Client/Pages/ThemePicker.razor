@@ -1,0 +1,165 @@
+﻿@page "/themePicker"
+@using RadzenBlazorPOC.Shared.Services.Interfaces;
+@using RadzenBlazorPOC.Shared;
+@inject NotificationService NotificationService
+@inject HttpClient Http
+@inject IThemeService ThemeService
+
+<h1>ThemePicker</h1>
+
+<MudDivider />
+
+@if (ThemeService == null && ThemeService.SelectedTheme == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <RadzenRow style="margin-top: 20px; margin-bottom: 20px" class="rz-text-align-center" Gap="1rem">
+        <RadzenButton Click=@(args => OnClick("Default")) Text="RD" ButtonStyle="ButtonStyle.Primary" />
+        <RadzenButton Click=@(args => OnClick("Material")) Text="Material" ButtonStyle="ButtonStyle.Primary" />
+        <RadzenButton Click=@(args => OnClick("Default")) Text="Default" ButtonStyle="ButtonStyle.Primary" />
+        <RadzenButton Click=@(args => OnClick("Dark")) Text="Dark" ButtonStyle="ButtonStyle.Primary" />
+        <RadzenButton Click=@(args => OnClick("Humanistic")) Text="Humanistic" ButtonStyle="ButtonStyle.Primary" />
+        <RadzenButton Click=@(args => OnClick("Software")) Text="Software" ButtonStyle="ButtonStyle.Primary" />
+        <RadzenButton Click=@(args => OnClick("Standard")) Text="Standard" ButtonStyle="ButtonStyle.Primary" />
+    </RadzenRow>
+    <RadzenRow class="rz-text-align-center" Gap="1rem">
+        <RadzenColumn Size="1" class="rz-color-info rz-p-5" />
+        <RadzenColumn Size="5" class="rz-background-color-info-lighter rz-color-info rz-p-5">
+            <RadzenPanel AllowCollapse="true" Class="rz-my-10 rz-mx-auto" Style="width: 100%;">
+                <HeaderTemplate>
+                    <RadzenText Style="padding-bottom: 1em" TextStyle="TextStyle.H6" Class="rz-display-flex rz-align-items-center rz-m-0">
+                        <RadzenIcon Icon="invert_colors" class="rz-mr-1" /><b>Filled Buttons - @ThemeService.SelectedTheme.Name Theme</b>
+                    </RadzenText>
+                </HeaderTemplate>
+                <ChildContent>
+                    <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                        <RadzenButton Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                        <RadzenButton Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                        <RadzenButton Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                        <RadzenButton Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                        <RadzenButton Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                        <RadzenButton Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                    </RadzenStack>
+                    <RadzenText TextStyle="TextStyle.Subtitle1" TagName="TagName.H3" class="rz-mt-4">Filled Shades</RadzenText>
+                    <RadzenStack Gap="1rem">
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Shade="Shade.Light" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Shade="Shade.Light" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Shade="Shade.Light" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Shade="Shade.Light" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Shade="Shade.Light" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Shade="Shade.Light" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Shade="Shade.Dark" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Shade="Shade.Dark" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Shade="Shade.Dark" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Shade="Shade.Dark" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Shade="Shade.Dark" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Shade="Shade.Dark" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Shade="Shade.Darker" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Shade="Shade.Darker" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Shade="Shade.Darker" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Shade="Shade.Darker" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Shade="Shade.Darker" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Shade="Shade.Darker" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                    </RadzenStack>
+                    <RadzenText TextStyle="TextStyle.Subtitle1" TagName="TagName.H3" class="rz-mt-4">Filled Light and Dark</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="rz-mb-4">Light and Dark button styles don't have Shades</RadzenText>
+                    <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                        <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Light button")) Text="Light" ButtonStyle="ButtonStyle.Light" />
+                        <RadzenButton Shade="Shade.Lighter" Click=@(args => OnClick("Dark button")) Text="Dark" ButtonStyle="ButtonStyle.Dark" />
+                    </RadzenStack>
+                </ChildContent>
+            </RadzenPanel>
+        </RadzenColumn>
+        <RadzenColumn Size="5" class="rz-background-color-info-lighter rz-color-info rz-p-5">
+            <RadzenPanel AllowCollapse="true" Class="rz-my-10 rz-mx-auto" Style="width: 100%;">
+                <HeaderTemplate>
+                    <RadzenText Style="padding-bottom: 1em" TextStyle="TextStyle.H6" Class="rz-display-flex rz-align-items-center rz-m-0">
+                        <RadzenIcon Icon="invert_colors" class="rz-mr-1" /><b>Outlined buttons - @ThemeService.SelectedTheme.Name Theme</b>
+                    </RadzenText>
+                </HeaderTemplate>
+                <ChildContent>
+                    <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                    </RadzenStack>
+
+                    <RadzenText TextStyle="TextStyle.Subtitle1" TagName="TagName.H3" class="rz-mt-4">Outlined Shades</RadzenText>
+                    <RadzenStack Gap="1rem">
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Lighter" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Lighter" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Lighter" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Lighter" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Lighter" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Lighter" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Light" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Light" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Light" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Light" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Light" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Light" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Dark" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Dark" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Dark" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Dark" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Dark" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Dark" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                        <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Darker" Click=@(args => OnClick("Primary button")) Text="Primary" ButtonStyle="ButtonStyle.Primary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Darker" Click=@(args => OnClick("Secondary button")) Text="Secondary" ButtonStyle="ButtonStyle.Secondary" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Darker" Click=@(args => OnClick("Info button")) Text="Info" ButtonStyle="ButtonStyle.Info" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Darker" Click=@(args => OnClick("Success button ")) Text="Success" ButtonStyle="ButtonStyle.Success" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Darker" Click=@(args => OnClick("Warning button ")) Text="Warning" ButtonStyle="ButtonStyle.Warning" />
+                            <RadzenButton Variant="Radzen.Variant.Outlined" Shade="Shade.Darker" Click=@(args => OnClick("Danger button")) Text="Danger" ButtonStyle="ButtonStyle.Danger" />
+                        </RadzenStack>
+                    </RadzenStack>
+
+                    <RadzenText TextStyle="TextStyle.Subtitle1" TagName="TagName.H3" class="rz-mt-4">Outlined Light and Dark</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="rz-mb-4">Light and Dark button styles don't have Shades</RadzenText>
+                    <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap" class="rz-background-color-base-500 rz-p-4">
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Light button")) Text="Light" ButtonStyle="ButtonStyle.Light" />
+                        <RadzenButton Variant="Radzen.Variant.Outlined" Click=@(args => OnClick("Dark button")) Text="Dark" ButtonStyle="ButtonStyle.Dark" />
+                    </RadzenStack>
+                </ChildContent>
+            </RadzenPanel>
+        </RadzenColumn>
+        <RadzenColumn Size="1" class="rz-color-info rz-p-5" />
+    </RadzenRow>
+}
+
+
+
+@code {
+    public RadzenBlazorPOC.Shared.Theme theme;
+
+    private async void OnClick(string text)
+    {
+        NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "Theme Selected", Detail = text });
+        ThemeService.SetTheme(ThemeService.GetThemes().First(s => s.Name == text));
+    }
+}

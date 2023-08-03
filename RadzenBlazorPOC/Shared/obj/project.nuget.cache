@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "6AD5Kmd92JujENAIJuybP31FyvM9h+CGoluOZAphN3uiN0+PrUMy5pxWqBg4oaUAaFsK6AMQEZfp3Q4Mul3J3w==",
+  "success": true,
+  "projectFilePath": "C:\\Source\\RadzenBlazorPOC\\RadzenBlazorPOC\\Shared\\RadzenBlazorPOC.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.11\\microsoft.aspnetcore.authorization.6.0.11.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.11\\microsoft.aspnetcore.components.6.0.11.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.11\\microsoft.aspnetcore.components.analyzers.6.0.11.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.11\\microsoft.aspnetcore.components.forms.6.0.11.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.11\\microsoft.aspnetcore.components.web.6.0.11.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.11\\microsoft.aspnetcore.metadata.6.0.11.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.3\\microsoft.extensions.logging.abstractions.6.0.3.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\microsoft.jsinterop\\6.0.11\\microsoft.jsinterop.6.0.11.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\mudblazor\\6.2.0\\mudblazor.6.2.0.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
+    "C:\\Users\\LeonardoDiSalvo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

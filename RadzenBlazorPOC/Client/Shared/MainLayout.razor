@@ -1,0 +1,73 @@
+﻿@using RadzenBlazorPOC.Shared;
+@using RadzenBlazorPOC.Shared.Services.Interfaces;
+@inherits LayoutComponentBase
+@inject HttpClient Http
+@inject IThemeService ThemeService
+
+@if (ThemeService == null && ThemeService.SelectedTheme == null)
+{
+    <h3>Loading...</h3>
+}
+else
+{
+    <HeadContent>
+        <link href="@ThemeService.SelectedTheme.Href" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    </HeadContent>
+
+    <MudLayout>
+        <MudAppBar Elevation="1" Dense="@dense">
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="MudBlazor.Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+            <MudSpacer />
+            <MudText>Actual theme selected: @ThemeService.SelectedTheme.Name</MudText>
+        </MudAppBar>
+        <MudDrawer @bind-Open="@open" ClipMode="clipMode" Breakpoint="@breakpoint" PreserveOpenState="@preserveOpenState" Elevation="1" Variant="@DrawerVariant.Mini">
+            <MudNavMenu>
+                <MudNavLink Href="configuration" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Store">Home</MudNavLink>
+                <MudNavLink Href="formTest" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.LibraryBooks">Form</MudNavLink>
+                <MudNavLink Href="themePicker" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Group">Theme</MudNavLink>
+                <MudNavLink Href="colorsPalette" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Group">Colors Palette</MudNavLink>
+                <MudNavGroup Title="Charts" Expanded="true">
+                    <MudNavLink Href="/pieChart">Pie</MudNavLink>
+                    <MudNavLink Href="/security">Security</MudNavLink>
+                </MudNavGroup>
+            </MudNavMenu>
+        </MudDrawer>
+        <MudMainContent Class="pt-16 px-16">
+            @Body
+        </MudMainContent>
+    </MudLayout>
+}
+
+<RadzenDialog />
+<RadzenNotification />
+<RadzenContextMenu />
+<RadzenTooltip />
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+@code {
+    bool open = true;
+    bool dense = false;
+    bool preserveOpenState = false;
+    Breakpoint breakpoint = Breakpoint.Lg;
+    DrawerClipMode clipMode = DrawerClipMode.Never;
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (ThemeService.SelectedTheme == null)
+        {
+            ThemeService.SetTheme(ThemeService.GetThemes().First());
+        }
+
+        ThemeService.Notify += () => InvokeAsync(StateHasChanged);
+    }
+}
